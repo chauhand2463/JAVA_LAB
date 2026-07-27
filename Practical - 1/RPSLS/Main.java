@@ -4,8 +4,7 @@ enum Move {
     ROCK, PAPER, SCISSORS, LIZARD, SPOCK
 }
 
-record Winner(Move me, Move computer) {
-};
+record Winner(Move me, Move computer) {};
 
 public class Main {
 
