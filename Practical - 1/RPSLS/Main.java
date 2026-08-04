@@ -28,7 +28,7 @@ public class Main {
 
         Winner w = new Winner(me1, computer1);
 
-        while (k != 5) {
+       while (k != 5) {
 
             k++;
 
