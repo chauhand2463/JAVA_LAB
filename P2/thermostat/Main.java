@@ -70,6 +70,7 @@ public class Main {
         }
 
         System.out.println("All the active counts: " + Thermostat.getActiveCount());
+        System.out.println("Dhairy Chauhan 25CE015");
         sc.close();
     }
 }

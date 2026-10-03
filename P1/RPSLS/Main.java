@@ -92,6 +92,7 @@ public class Main {
                 System.out.println("you win " + Me + " - " + Computer);
             }
         }
+        System.out.println("Dhairy Chauhan 25CE015");
 
         sc.close();
     }

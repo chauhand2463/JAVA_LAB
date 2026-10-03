@@ -43,7 +43,8 @@ public class main {
         System.out.println("Enter your password: ");         
         String password = sc.next();          
         
-        pass.strength(password);          
+        pass.strength(password);    
+        System.out.println("Dhairy Chauhan 25CE015");      
         sc.close();     
     } 
 }

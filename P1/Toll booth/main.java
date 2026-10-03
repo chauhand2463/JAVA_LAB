@@ -9,18 +9,15 @@ enum VehicleType {
 record Vehicle(int number, VehicleType type) {}
 
 class Practical {
-
     public static void main(String[] args) {
-
         Scanner sc = new Scanner(System.in);
 
         int toll = 0, b = 0, c = 0, t = 0;
 
-        System.out.print("Enter vehicle type : ");
+        System.out.print("Enter vehicle type: ");
         String input = sc.next().toUpperCase();
 
         while (!input.equals("DONE")) {
-
             VehicleType type = VehicleType.valueOf(input);
 
             System.out.print("Enter vehicle number: ");
@@ -48,28 +45,17 @@ class Practical {
         }
 
         System.out.println("Total Toll = " + toll);
-        System.out.print("Most frequent:");
-        if(b>c)
-        {
-            if(b>t)
-            {
-                System.out.print("BIKE");
-            }
-            else
-            {
-                System.out.print("CAR");
-            }
+        System.out.print("Most frequent: ");
+
+        if (b >= c && b >= t) {
+            System.out.println("BIKE");
+        } else if (c >= b && c >= t) {
+            System.out.println("CAR");
+        } else {
+            System.out.println("TRUCK");
         }
-        else{
-            if(c>t)
-            {
-                System.out.print("CAR");
-            }
-            else
-            {
-                System.out.print("TRUCK");
-            }
-        }
+
+        System.out.println("Dhairy Chauhan 25CE015");
 
         sc.close();
     }
