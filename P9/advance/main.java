@@ -122,6 +122,7 @@ public class main {
                 localSum += ARRAY[i];
             }
             total.addAndGet(localSum);
+             System.out.println("Dhairy Chauhan 25CE015");
         }
     }
 }
