@@ -16,7 +16,7 @@ class BookingThread extends Thread {
     boolean got;
 
     BookingThread(Seat seat) {
-        this.seat = seat;
+        this.seat = seat;   
     }
 
     public void run() {
