@@ -68,46 +68,28 @@ class SyncBookingThread extends Thread {
     }
 }
 
-public class main {
-    public static void main(String[] args) throws InterruptedException {
+public static void main(String[] args) throws InterruptedException {
         Seat seat = new Seat();
-        BookingThread[] t = new BookingThread[10];
-        for (int i = 0; i < t.length; i++) {
-            t[i] = new BookingThread(seat);
-            t[i].setName("User-" + i);
+        BookingThread[] threads = new BookingThread[10];
+        for (int i = 0; i < 10; i++) {
+            threads[i] = new BookingThread(seat);
+            threads[i].start();
         }
-        for (int i = 0; i < t.length; i++) {
-            t[i].start();
+        for (int i = 0; i < 10; i++) {
+            threads[i].join();
         }
-        for (int i = 0; i < t.length; i++) {
-            t[i].join();
-        }
-        int booked = 0;
-        for (int i = 0; i < t.length; i++) {
-            if (t[i].got) {
-                booked++;
-            }
-        }
-        System.out.println("Without synchronization -> booked = " + booked + " , seatsLeft = " + seat.seatsLeft);
 
-        SyncSeat sseat = new SyncSeat();
-        SyncBookingThread[] st = new SyncBookingThread[10];
-        for (int i = 0; i < st.length; i++) {
-            st[i] = new SyncBookingThread(sseat);
-            st[i].setName("User-" + i);
+        System.out.println("Seats left: " + seat.seatsLeft);
+
+        SyncSeat syncSeat = new SyncSeat();
+        SyncBookingThread[] syncThreads = new SyncBookingThread[10];
+        for (int i = 0; i < 10; i++) {
+            syncThreads[i] = new SyncBookingThread(syncSeat);
+            syncThreads[i].start();
         }
-        for (int i = 0; i < st.length; i++) {
-            st[i].start();
+        for (int i = 0; i < 10; i++) {
+            syncThreads[i].join();
         }
-        for (int i = 0; i < st.length; i++) {
-            st[i].join();
-        }
-        int sbooked = 0;
-        for (int i = 0; i < st.length; i++) {
-            if (st[i].got) {
-                sbooked++;
-            }
-        }
-        System.out.println("With synchronization  -> booked = " + sbooked + " , seatsLeft = " + sseat.seatsLeft);
+
+        System.out.println("Seats left after synchronized booking: " + syncSeat.seatsLeft);
     }
-}
