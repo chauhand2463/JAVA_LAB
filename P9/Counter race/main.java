@@ -55,5 +55,4 @@ public class main {
     static String verdict(boolean correct) {
         return correct ? "(correct)" : "(too low, updates were lost)";
     }
-     System.out.println("Dhairy Chauhan 25CE015");
 }

@@ -27,7 +27,7 @@ class UserForm {
     }
 }
 
-public class pract7 {
+public class main{
     public static void main(String[] args) throws Exception {
         Scanner sc = new Scanner(System.in);
 
